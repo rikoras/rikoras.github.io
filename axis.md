@@ -62,7 +62,7 @@
 		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
 			<span>2018-05-04</span>
 			<div style="margin-top:8px">天气晴朗</div>
-			<div style="margin-top:8px">适合跑步</div>
+			<div style="margin-top:8px">适合跑步嘟嘟嘟跑步！</div>
 			<div style="position:absolute;right: 8px;bottom:10px">查看更多>></div>
 		    </div>
 		</li>
