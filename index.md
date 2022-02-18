@@ -81,7 +81,7 @@ layout: default
 			<span>2018-05-04</span>
 			<div style="margin-top:8px">天气晴朗</div>
 			<div style="margin-top:8px">适合跑步嘟嘟嘟跑步！</div>
-			<div style="position:absolute;right: 8px;bottom:10px">查看更多>></div>
+			<div style="position:absolute;right: 8px;bottom:10px">[<font size="6">21.2.18</font>](./2021/02/18/log.html).>></div>
 		    </div>
 		</li>
 	    </ul>
