@@ -15,5 +15,6 @@ layout: default
 
 [<font size="6">21.2.18</font>](./2021/02/18/log.html).
 
+[testAxis](/axis.html).
 
 [命令行](./CommandLine.html).
