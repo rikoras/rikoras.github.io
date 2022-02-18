@@ -79,7 +79,8 @@ layout: default
 		    <div class="lzc_icon"></div>
 		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
 			<span>2018-05-04</span>
-			<div style="margin-top:8px">[testAxis](/axis.html).</div>
+			<div style="margin-top:8px">我永远喜欢伊蕾娜小姐</div>
+            <a href="./2021/02/17/log.html">2.17</a>
 			<div style="margin-top:8px">适合跑步嘟嘟嘟跑步！</div>
 			<div style="position:absolute;right: 8px;bottom:10px">查看更多>></div>
 		    </div>
