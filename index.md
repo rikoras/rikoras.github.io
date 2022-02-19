@@ -67,14 +67,6 @@ layout: default
 		<li class="time-line-item" >
 		    <div class="lzc_icon"></div>
 		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
-			<span>2022-02-18</span>
-			<div style="margin-top:12px">Assrance&Absolition</div>
-			<a href="./2021/02/18/log.html">2.18</a>
-		    </div>
-		</li>
-		<li class="time-line-item" >
-		    <div class="lzc_icon"></div>
-		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
 			<span>2022-02-19</span>
 			<div style="margin-top:12px">感觉越糟说不定效果越好</div>
 			<a href="./2021/02/19/log.html">2.19</a>
