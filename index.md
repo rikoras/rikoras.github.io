@@ -52,7 +52,7 @@ layout: default
 		    <div class="lzc_icon"></div>
 		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
 			<span>2022-02-17</span>
-			<div style="margin-top:8px">锚定星海</div>
+			<div style="margin-top:12px">锚定星海</div>
 			<a href="./2021/02/17/log.html">2.17</a>
 		    </div>
 		</li>
@@ -60,27 +60,24 @@ layout: default
 		    <div class="lzc_icon"></div>
 		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
 			<span>2022-02-18</span>
-			<div style="margin-top:8px">Assrance&Absolition</div>
+			<div style="margin-top:12px">Assrance&Absolition</div>
 			<a href="./2021/02/18/log.html">2.18</a>
 		    </div>
 		</li>
 		<li class="time-line-item" >
 		    <div class="lzc_icon"></div>
 		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
-			<span>2018-05-03</span>
-			<div style="margin-top:8px">天气晴朗</div>
-			<div style="margin-top:8px">适合跑步</div>
-			<div style="position:absolute;right: 8px;bottom:10px">查看更多>></div>
+			<span>2022-02-18</span>
+			<div style="margin-top:12px">Assrance&Absolition</div>
+			<a href="./2021/02/18/log.html">2.18</a>
 		    </div>
 		</li>
 		<li class="time-line-item" >
 		    <div class="lzc_icon"></div>
 		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
-			<span>2018-05-04</span>
-			<div style="margin-top:8px">我永远喜欢伊蕾娜小姐</div>
-            <a href="./2021/02/17/log.html">2.17</a>
-			<div style="margin-top:8px">适合跑步嘟嘟嘟跑步！</div>
-			<div style="position:absolute;right: 8px;bottom:10px">查看更多>></div>
+			<span>2022-02-19</span>
+			<div style="margin-top:12px">感觉越糟说不定效果越好</div>
+			<a href="./2021/02/19/log.html">2.19</a>
 		    </div>
 		</li>
 	    </ul>
