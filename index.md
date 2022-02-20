@@ -81,6 +81,7 @@ layout: default
 			<span>2022-02-20</span>
 			<div style="margin-top:12px">凡升起的，终将灭去</div>
 			<a href="./2021/02/20/log.html">2.20</a>
+			<a href="./2021/02/20/report.html">进度报告</a>
 		    </div>
 		</li>
 
