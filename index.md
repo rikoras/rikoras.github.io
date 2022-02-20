@@ -56,6 +56,7 @@ layout: default
 			<a href="./2021/02/17/log.html">2.17</a>
 		    </div>
 		</li>
+		
 		<li class="time-line-item" >
 		    <div class="lzc_icon"></div>
 		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
@@ -64,6 +65,7 @@ layout: default
 			<a href="./2021/02/18/log.html">2.18</a>
 		    </div>
 		</li>
+
 		<li class="time-line-item" >
 		    <div class="lzc_icon"></div>
 		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
@@ -72,7 +74,7 @@ layout: default
 			<a href="./2021/02/19/log.html">2.19</a>
 		    </div>
 		</li>
-		</li>
+
 		<li class="time-line-item" >
 		    <div class="lzc_icon"></div>
 		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
@@ -81,6 +83,7 @@ layout: default
 			<a href="./2021/02/20/log.html">2.20</a>
 		    </div>
 		</li>
+
 	    </ul>
 	</div>
     </article>
