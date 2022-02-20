@@ -78,7 +78,7 @@ layout: default
 		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
 			<span>2022-02-20</span>
 			<div style="margin-top:12px">凡升起的，终将灭去</div>
-			<a href="./2021/02/19/log.html">2.20</a>
+			<a href="./2021/02/20/log.html">2.20</a>
 		    </div>
 		</li>
 	    </ul>
