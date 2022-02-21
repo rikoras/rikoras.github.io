@@ -11,10 +11,6 @@ layout: default
 
 ## 时间轴
 
-[<font size="6">21.2.17</font>](./2021/02/17/log.html).
-
-[<font size="6">21.2.18</font>](./2021/02/18/log.html).
-
 [testAxis](/axis.html).
 
 <html>
@@ -81,7 +77,17 @@ layout: default
 			<span>2022-02-20</span>
 			<div style="margin-top:12px">凡升起的，终将灭去</div>
 			<a href="./2021/02/20/log.html">2.20</a>
-			<a href="./2021/02/20/report.html">进度报告</a>
+			<a href="./2021/02/20/report.html">	进度报告</a>
+		    </div>
+		</li>
+
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-02-21</span>
+			<div style="margin-top:12px">决胜之兵</div>
+			<a href="./2021/02/21/log.html">2.21</a>
+			<a href="./2021/02/21/report.html">	进度报告</a>
 		    </div>
 		</li>
 
