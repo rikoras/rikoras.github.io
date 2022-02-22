@@ -15,7 +15,7 @@ layout: default
 
 [考研企划](/project.html).
 
-[2022考研数学大纲](/math_outline_2022.html).
+[2022考研数学大纲](/2022年考研数学一考试大纲原文 - 中国考研网.html).
 
 <html>
 <head>
