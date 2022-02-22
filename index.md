@@ -12,7 +12,10 @@ layout: default
 ## 时间轴
 
 [testAxis](/axis.html).
+
 [考研企划](/project.html).
+
+[2022考研数学大纲](/math_outline_2022.html).
 
 <html>
 <head>

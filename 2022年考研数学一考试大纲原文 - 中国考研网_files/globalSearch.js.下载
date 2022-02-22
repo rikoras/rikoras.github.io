@@ -1,0 +1,61 @@
+
+function changeSearch(val)
+{
+	
+	if(val == 100) {
+		$("#globalSearch").attr("action", "/info/list.shtml");
+		$("#searchVal").attr("name", "Search");
+	}
+	if(val == 1) {
+		$("#globalSearch").attr("action", "/graduate/index.shtml");
+		$("#searchVal").attr("name", "name");
+	}
+	if(val == 2) {
+		$("#globalSearch").attr("action", "/graduate/IndexSpeciality.shtml");
+		$("#searchVal").attr("name", "name");
+	}
+	if(val == 3) {
+		$("#globalSearch").attr("action", "/ask/search.shtml");
+		$("#searchVal").attr("name", "search");
+	}
+	if(val == 4) {
+		$("#globalSearch").attr("action", "/xindongfang/search.shtml");
+		$("#searchVal").attr("name", "className");
+	} 
+	
+}
+
+
+function indexSearch(val)
+{
+/*	alert($("#inputkey").attr("name"));
+	alert($("#searchForm").attr("action"));*/
+	if(val == 100) {
+		$("#searchForm").attr("action", "/info/list.shtml");
+		$("#inputkey").attr("name", "Search");
+	}
+	if(val == 1) {
+		$("#searchForm").attr("action", "/graduate/index.shtml");
+		$("#inputkey").attr("name", "name");
+	}
+	if(val == 2) {
+		$("#searchForm").attr("action", "/graduate/IndexSpeciality.shtml");
+		$("#inputkey").attr("name", "name");
+	}
+	if(val == 3) {
+		$("#searchForm").attr("action", "/ask/search.shtml");
+		$("#inputkey").attr("name", "search");
+	}
+	if(val == 4) {
+		$("#globalSearch").attr("action", "/xindongfang/search.shtml");
+		$("#searchVal").attr("name", "className");
+	} 
+/*	alert($("#inputkey").attr("name"));
+	alert($("#searchForm").attr("action"));*/
+}
+
+
+function submitGlobalSearch()
+{
+	$("#globalSearch").submit();
+}

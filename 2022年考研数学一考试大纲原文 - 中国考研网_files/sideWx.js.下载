@@ -1,0 +1,10 @@
+
+
+//sideWxClose
+var wxClose = $('.side-wx .close');
+var wxSide = $('.side-wx');
+
+$(wxClose).click(function(event) {
+    wxSide.remove()
+
+});
