@@ -1,7 +1,0 @@
-
-/*sideWx*/
-
-.side-wx{z-index:100000;position:fixed;right:85%;bottom:5%;width: 150px;height: auto;background: white;padding: 10px 0}
-.side-wx img{max-width: 100%;}
-.side-wx .close{padding-right:10px;text-align: right;overflow: hidden;display: block;cursor: pointer;font-weight: bold}
-.side-wx p{text-align: center;color: #666;line-height: 1.6;overflow: hidden;padding: 0;margin:0}
