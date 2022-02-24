@@ -61,7 +61,7 @@ layout: default
 		    <div class="lzc_icon"></div>
 		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
 			<span>2022-02-18</span>
-			<div style="margin-top:12px">Assrance&Absolition</div>
+			<div style="margin-top:12px">Assrance&Absolution</div>
 			<a href="./2021/02/18/log.html">2.18</a>
 		    </div>
 		</li>
@@ -105,7 +105,7 @@ layout: default
 		    </div>
 		</li>
 
-			<li class="time-line-item" >
+		<li class="time-line-item" >
 		    <div class="lzc_icon"></div>
 		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
 			<span>2022-02-23</span>
@@ -115,6 +115,15 @@ layout: default
 		    </div>
 		</li>
 
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-02-24</span>
+			<div style="margin-top:12px">幽烛誓约</div>
+			<a href="./2021/02/24/log.html">2.24</a>
+			<a href="./2021/02/24/report.html">	进度报告</a>
+		    </div>
+		</li>
 
 	    </ul>
 	</div>
