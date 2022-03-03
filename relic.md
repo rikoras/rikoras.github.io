@@ -5,6 +5,8 @@ layout: default
 > **_<font color="black" size="4">“风带来了故事的种子，而时间使之发芽”</font>_**
 >
 > **_<font color="black" size="4">“天才一生总会几度重返青春”</font>_**
+>
+> **_<font color="black" size="4">“冲压，聚合，直到炉心融解”</font>_**
 
 ![across](/relic/across.png)
 
