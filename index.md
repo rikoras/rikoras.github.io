@@ -17,6 +17,8 @@ layout: default
 
 [2022考研数学大纲](http://static.chinakaoyan.com/info/article/id/412455.shtml).
 
+[静态漂移现象](/posts/2021/03/07/log.html).
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -222,6 +224,16 @@ layout: default
 			<div style="margin-top:12px">没有努力的回忆</div>
 			<a href="./2021/03/06/log.html">3.06</a>
 			<a href="./2021/03/06/report.html">	进度报告</a>
+		    </div>
+		</li>
+		<br>
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-03-07</span>
+			<div style="margin-top:12px">存在于每颗沙砾之中</div>
+			<a href="./2021/03/07/log.html">3.07</a>
+			<a href="./2021/03/07/report.html">	进度报告</a>
 		    </div>
 		</li>
 	    </ul>
