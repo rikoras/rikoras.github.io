@@ -7,7 +7,9 @@ layout: default
 ***
 
 <br>
-> [**_<font color="#5f5fff" size="5">“你现在可以启用你的一个遗珍”</font>_**](/relic.html).
+> [**_<font color="#6f6fff" size="5">“你现在可以启用你的一个遗珍”</font>_**](/relic.html).
+<br>
+> [**_<font color="#8f5fff" size="5">“你现在可以创造你的一个遗珍”</font>_**](/relic.html).
 
 ## 时间轴
 
@@ -274,6 +276,26 @@ layout: default
 			<div style="margin-top:12px">奇迹的复活</div>
 			<a href="./2021/03/11/log.html">3.11</a>
 			<a href="./2021/03/11/report.html">	进度报告</a>
+		    </div>
+		</li>
+		<br>
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-03-12</span>
+			<div style="margin-top:12px">涤净宇内</div>
+			<a href="./2021/03/12/log.html">3.12</a>
+			<a href="./2021/03/12/report.html">	进度报告</a>
+		    </div>
+		</li>
+		<br>
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-03-13</span>
+			<div style="margin-top:12px">天生的弱者</div>
+			<a href="./2021/03/13/log.html">3.13</a>
+			<a href="./2021/03/13/report.html">	进度报告</a>
 		    </div>
 		</li>
 	    </ul>
