@@ -21,6 +21,8 @@ layout: default
 
 [静态漂移现象](/posts/2021/03/07/log.html).
 
+[3.17第一次加速计划](/posts/2021/03/16/log.html).
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -298,7 +300,6 @@ layout: default
 			<a href="./2021/03/13/report.html">	进度报告</a>
 		    </div>
 		</li>
-
 		<br>
 		<li class="time-line-item" >
 		    <div class="lzc_icon"></div>
@@ -309,6 +310,27 @@ layout: default
 			<a href="./2021/03/14/report.html">	进度报告</a>
 		    </div>
 		</li>
+		<br>
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-03-15</span>
+			<div style="margin-top:12px">16</div>光
+			<a href="./2021/03/15/log.html">3.15</a>
+			<a href="./2021/03/15/report.html">	进度报告</a>
+		    </div>
+		</li>
+		<br>
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-03-16</span>
+			<div style="margin-top:12px">nevigator</div>
+			<a href="./2021/03/16/log.html">3.16</a>
+			<a href="./2021/03/16/report.html">	进度报告</a>
+		    </div>
+		</li>
+
 	    </ul>
 	</div>
     </article>
