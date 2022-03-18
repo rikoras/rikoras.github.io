@@ -52,8 +52,18 @@ layout: default
 </head>
 <body >
     <article>
-	<div>
+	<div>	
 	    <ul id = "sale_list" class="lzc_timeline">
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-03-18</span>
+			<div style="margin-top:12px">此刻的失败者终将胜利…</div>
+			<a href="./2021/03/18/log.html">3.18</a>
+			<a href="./2021/03/18/report.html">	进度报告</a>
+		    </div>
+		</li>
+<br>
 	        <li class="time-line-item" >
 		    <div class="lzc_icon"></div>
 		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
