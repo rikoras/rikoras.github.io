@@ -57,6 +57,26 @@ layout: default
 		<li class="time-line-item" >
 		    <div class="lzc_icon"></div>
 		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-03-20</span>
+			<div style="margin-top:12px">只要不失去你的崇高</div>
+			<a href="./2021/03/20/log.html">3.20</a>
+			<a href="./2021/03/20/report.html">	进度报告</a>
+		    </div>
+		</li>
+<br>
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-03-19</span>
+			<div style="margin-top:12px">积雪之下</div>
+			<a href="./2021/03/19/log.html">3.19</a>
+			<a href="./2021/03/19/report.html">	进度报告</a>
+		    </div>
+		</li>
+<br>
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
 			<span>2022-03-18</span>
 			<div style="margin-top:12px">此刻的失败者终将胜利…</div>
 			<a href="./2021/03/18/log.html">3.18</a>
