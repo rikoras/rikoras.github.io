@@ -67,6 +67,16 @@ layout: default
 		<li class="time-line-item" >
 		    <div class="lzc_icon"></div>
 		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-03-23</span>
+			<div style="margin-top:12px">Paradox</div>
+			<a href="./2021/03/23/log.html">3.23</a>
+			<a href="./2021/03/23/report.html">	进度报告</a>
+		    </div>
+		</li>
+<br>
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
 			<span>2022-03-21</span>
 			<div style="margin-top:12px">Into the fire</div>
 			<a href="./2021/03/21/log.html">3.21</a>
