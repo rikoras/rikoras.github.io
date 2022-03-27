@@ -7,6 +7,8 @@ layout: default
 > **_<font color="black" size="4">“天才一生总会几度重返青春”</font>_**
 >
 > **_<font color="black" size="4">“冲压，聚合，直到炉心融解”</font>_**
+> **_“视界中一度河床干涸，乌云铅垂，昔日殿堂，化作瓦砾。”_**
+> **_“但余烬亦能闪耀。”_**
 
 ![across](/relic/across.png)
 
