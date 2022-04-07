@@ -56,6 +56,32 @@ layout: default
 		<li class="time-line-item" >
 		    <div class="lzc_icon"></div>
 		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-04-06</span>
+			<div style="margin-top:12px">Deveine Sparkle</div>
+			<a href="./2021/04/06/log.html">4.6</a>
+			<a href="./2021/04/06/report.html">	进度报告</a>
+		    </div>
+		</li>
+<br>
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-04-05</span>
+			<div style="margin-top:12px">超脱</div>
+		    </div>
+		</li>
+<br>
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-04-04</span>
+			<div style="margin-top:12px">微小的代价</div>
+		    </div>
+		</li>
+<br>
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
 			<span>2022-04-03</span>
 			<div style="margin-top:12px">分布律</div>
 			<a href="./2021/04/03/log.html">4.3</a>
