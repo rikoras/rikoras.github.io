@@ -56,6 +56,26 @@ layout: default
 		<li class="time-line-item" >
 		    <div class="lzc_icon"></div>
 		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-04-10</span>
+			<div style="margin-top:12px">旅途的开端</div>
+			<a href="./2021/04/10/log.html">4.10</a>
+			<a href="./2021/04/10/report.html">	进度报告</a>
+		    </div>
+		</li>
+<br>
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-04-09</span>
+			<div style="margin-top:12px">循环的终结</div>
+			<a href="./2021/04/09/log.html">4.9</a>
+			<a href="./2021/04/09/report.html">	进度报告</a>
+		    </div>
+		</li>
+<br>
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
 			<span>2022-04-08</span>
 			<div style="margin-top:12px">Salvage</div>
 			<a href="./2021/04/08/log.html">4.8</a>
