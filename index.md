@@ -56,6 +56,56 @@ layout: default
 		<li class="time-line-item" >
 		    <div class="lzc_icon"></div>
 		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-04-15</span>
+			<div style="margin-top:12px">而我们的选择来自使命</div>
+			<a href="./2021/04/15/log.html">4.15</a>
+			<a href="./2021/04/15/report.html">	进度报告</a>
+		    </div>
+		</li>
+<br>
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-04-14</span>
+			<div style="margin-top:12px">我们的人生来自选择</div>
+			<a href="./2021/04/14/log.html">4.14</a>
+			<a href="./2021/04/14/report.html">	进度报告</a>
+		    </div>
+		</li>
+<br>
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-04-13</span>
+			<div style="margin-top:12px">赐我烈火</div>
+			<a href="./2021/04/13/log.html">4.13</a>
+			<a href="./2021/04/13/report.html">	进度报告</a>
+		    </div>
+		</li>
+<br>
+	<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-04-12</span>
+			<div style="margin-top:12px">狂风的召唤</div>
+			<a href="./2021/04/12/log.html">4.12</a>
+			<a href="./2021/04/12/report.html">	进度报告</a>
+		    </div>
+		</li>
+<br>
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-04-11</span>
+			<div style="margin-top:12px">东风的祈愿</div>
+			<a href="./2021/04/11/log.html">4.11</a>
+			<a href="./2021/04/11/report.html">	进度报告</a>
+		    </div>
+		</li>
+<br>
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
 			<span>2022-04-10</span>
 			<div style="margin-top:12px">旅途的开端</div>
 			<a href="./2021/04/10/log.html">4.10</a>
