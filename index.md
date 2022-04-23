@@ -56,6 +56,36 @@ layout: default
 		<li class="time-line-item" >
 		    <div class="lzc_icon"></div>
 		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-04-23</span>
+			<div style="margin-top:12px">他用他的灵魂指挥他的肉体</div>
+			<a href="./2021/04/23/log.html">4.23</a>
+			<a href="./2021/04/23/report.html">	进度报告</a>
+		    </div>
+		</li>
+<br>
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-04-22</span>
+			<div style="margin-top:12px">需要耐心</div>
+			<a href="./2021/04/22/log.html">4.22</a>
+			<a href="./2021/04/22/report.html">	进度报告</a>
+		    </div>
+		</li>
+<br>
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-04-21</span>
+			<div style="margin-top:12px">目を覚まして</div>
+			<a href="./2021/04/21/log.html">4.21</a>
+			<a href="./2021/04/21/report.html">	进度报告</a>
+		    </div>
+		</li>
+<br>
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
 			<span>2022-04-20</span>
 			<div style="margin-top:12px">Still Breathing</div>
 			<a href="./2021/04/20/log.html">4.20</a>
