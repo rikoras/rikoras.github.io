@@ -56,6 +56,26 @@ layout: default
 		<li class="time-line-item" >
 		    <div class="lzc_icon"></div>
 		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-04-28</span>
+			<div style="margin-top:12px">明天啊明天</div>
+			<a href="./2021/04/28/log.html">4.28</a>
+			<a href="./2021/04/28/report.html">	进度报告</a>
+		    </div>
+		</li>
+<br>
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
+			<span>2022-04-27</span>
+			<div style="margin-top:12px">终将重逢</div>
+			<a href="./2021/04/27/log.html">4.27</a>
+			<a href="./2021/04/27/report.html">	进度报告</a>
+		    </div>
+		</li>
+<br>
+		<li class="time-line-item" >
+		    <div class="lzc_icon"></div>
+		    <div class="lzc_label" data-scroll-reveal="enter right over 1s" >
 			<span>2022-04-23</span>
 			<div style="margin-top:12px">他用他的灵魂指挥他的肉体</div>
 			<a href="./2021/04/23/log.html">4.23</a>
