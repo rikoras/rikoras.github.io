@@ -22,8 +22,11 @@ layout: default
 
 [3.17第一次加速计划](/posts/2021/03/16/log.html).
 
-<a href="/chapter1.html" font color="black" size="4">第一乐章</a>
-<a href="/chapter2.html" font color="black" size="4">第二乐章</a>
+[敬无限可能](/posts/2021/05/28/log.html).
+
+<a href="/chapter1.html" font color="black" size="10">第一乐章</a>
+
+<a href="/chapter2.html" font color="black" size="10">第二乐章</a>
 
 
 
