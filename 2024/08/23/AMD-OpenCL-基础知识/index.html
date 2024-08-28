@@ -355,7 +355,7 @@
 <p>CPU可以通过PCIe访问的独显内存。GPU依然可以满带宽访问。CPU对其不采用缓存机制，所以读取速度会很慢。文档没有说明APU的这种内存具体的行为，猜测APU的Host-Visible Device Memory和Device-Visible Host Memory应该是类似的？</p>
 </li>
 </ol>
-<h2 id="默认的内存对象分配方式"><a href="#默认的内存对象分配方式" class="headerlink" title="默认的内存对象分配方式"></a>默认的内存对象分配方式</h2><p><img src="C:\Users\14717\AppData\Roaming\marktext\images\2024-08-23-22-19-23-image.png"></p>
+<h2 id="默认的内存对象分配方式"><a href="#默认的内存对象分配方式" class="headerlink" title="默认的内存对象分配方式"></a>默认的内存对象分配方式</h2><p><img src="/2024/08/20/test/penCL-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1.png"></p>
 <p>通过clCreateBuffer&#x2F;clCreateImage创建内存对象的时候，根据传入的flag，可以指定内存对象的位置。</p>
 <h2 id="Mapping和Zero-copy"><a href="#Mapping和Zero-copy" class="headerlink" title="Mapping和Zero-copy"></a>Mapping和Zero-copy</h2><p> clEnqueueMapBuffer&#x2F;clEnqueueMapImage可以获取一个内存对象的指针，然后就可以像访问host memory一样访问device的内存。</p>
 <p>访问结束后，需要使用clEnqueueUnmapMemObject解除映射。</p>
