@@ -4,8 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="AMD OpenCL 基础知识, NodYLleDelfrydol">
-    <meta name="description" content="原文 https://www.amd.com/content/dam/amd/en/documents/radeon-tech-docs/programmer-references/AMD_OpenCL_Programming_Optimi">
+    <meta name="keywords" content="Empowering 1000 tokens/second on-device LLM prelling with mllm-NPU, NodYLleDelfrydol">
+    <meta name="description" content="Empowering 1000 tokens&amp;#x2F;second on-device LLM prelling with mllm-NPU关键词：LLM，端侧推理，NPU，软硬件协同，针对NPU的量化
+Introduction先提及了">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>AMD OpenCL 基础知识 | NodYLleDelfrydol</title>
+    <title>Empowering 1000 tokens/second on-device LLM prelling with mllm-NPU | NodYLleDelfrydol</title>
     <link rel="icon" type="image/png" href="/bocchi.png">
     
 
@@ -269,12 +270,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">AMD OpenCL 基础知识</h1>
+                    <h1 class="description center-align post-title">Empowering 1000 tokens/second on-device LLM prelling with mllm-NPU</h1>
                 </div>
             </div>
         </div>
@@ -310,7 +311,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-08-23
+                    2024-08-28
                 </div>
                 
 
@@ -331,44 +332,55 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>原文 <a target="_blank" rel="noopener" href="https://www.amd.com/content/dam/amd/en/documents/radeon-tech-docs/programmer-references/AMD_OpenCL_Programming_Optimization_Guide2.pdfhttps://www.amd.com/content/dam/amd/en/documents/radeon-tech-docs/programmer-references/AMD_OpenCL_Programming_Optimization_Guide2.pdf">https://www.amd.com/content/dam/amd/en/documents/radeon-tech-docs/programmer-references/AMD_OpenCL_Programming_Optimization_Guide2.pdfhttps://www.amd.com/content/dam/amd/en/documents/radeon-tech-docs/programmer-references/AMD_OpenCL_Programming_Optimization_Guide2.pdf</a></p>
-<h2 id="内存模型"><a href="#内存模型" class="headerlink" title="内存模型"></a>内存模型</h2><p>一共有五种内存。</p>
+                <h1 id="Empowering-1000-tokens-second-on-device-LLM-prelling-with-mllm-NPU"><a href="#Empowering-1000-tokens-second-on-device-LLM-prelling-with-mllm-NPU" class="headerlink" title="Empowering 1000 tokens&#x2F;second on-device LLM prelling with mllm-NPU"></a>Empowering 1000 tokens&#x2F;second on-device LLM prelling with mllm-NPU</h1><p>关键词：LLM，端侧推理，NPU，软硬件协同，针对NPU的量化</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>先提及了在某些任务中，prefill阶段占整个任务的绝大多数时间（dominates the end-to-end inference latency）（例如，提取屏幕中的信息作为上下文进行回复，prompt会非常长，600-800个token）。此处@powerinfer，动态激活稀疏性只能对decoding阶段的gemv操作有加速，无法处理这种场景。投机解码的方法也仅对decoding阶段有加速。</p>
+<p><img src="/2024/08/20/test/ering-1000-tokens-second-on-device-LLM-prefilling-with-mllm-NPU/2024-08-28-18-59-13-image.png"></p>
+<p>prefilling是计算密集型操作，对<strong>手机的</strong>cpu和gpu不友好（缺乏并行性能）。</p>
+<p>NPU的优势在于强大的并行性能和优秀的能耗。</p>
+<p>接着，列出三点挑战，指出直接用NPU存在的问题：（文中的说法是NPU和LLM存在semantic gap）</p>
 <ol>
-<li><p>Unpinned Host Memory</p>
-<p>普通的CPU内存，可以被CPU满带宽访问，但是不能被GPU访问。如果需要把这种内存拷贝到GPU端，则需要先Pin再利用DMA传输。对于大块的内存，OpenCL有双缓冲等优化方法，但是总体的传输开销还是很大。</p>
+<li><p>NPU主要用于处理静态shape。但是prompt的长度是动态的。重新构建计算图开销太大（数秒甚至更多）。使用padding又造成算力浪费。</p>
 </li>
-<li><p>Pinned Host Memory</p>
-<p>操作系统保证内存的物理地址不变，并且不会被换出。CPU依然可以满带宽访问。runtime允许GPU访问这种内存。</p>
-<p>CPU对Pinned Memory也有缓存机制。</p>
-<p>值得注意的是，APU虽然不需要PCIe和DMA进行传输，但是其访问Pinned Memory的速度也比device-visible host memory要慢很多。（主要是缓存一致性的问题）</p>
+<li><p>目前绝大多数NPU不支持<strong>分组量化</strong>的matmul。也即，模型权重分为若干个组，不同组使用不同的量化scale，可以避免将离群值截断造成大的性能损失。如果分成多个matmul，则NPU需要多做很多次reduce的<strong>浮点</strong>加法，造成10倍以上的性能损失。</p>
 </li>
-<li><p>Device-Visible Host Memory</p>
-<p>也即不使用CPU缓存一致性协议的Pinned Memory。GPU可以以更高的带宽访问这种内存。这种内存是有大小限制的。</p>
-<p>不使用缓存导致CPU读取这种内存的带宽要显著低于正常内存。然而，内存系统可以通过<em>写合并</em>来优化连续流式写的性能。</p>
-<p>对于APU来说，没有独立显存，这种内存也就是它的global device memory。</p>
-</li>
-<li><p>Device Memory</p>
-<p>也即通常讨论的独显的显存。CPU无法直接访问。</p>
-<p>APU不存在这种内存。逻辑上的device memory实际上是Device-Visible Host Memory。这部分内存一部分留作帧缓冲区（也就是任务管理器里的专用显存）。帧缓冲区CPU不可见，自然也不支持Zero-copy。</p>
-</li>
-<li><p>Host-Visible Device Memory</p>
-<p>CPU可以通过PCIe访问的独显内存。GPU依然可以满带宽访问。CPU对其不采用缓存机制，所以读取速度会很慢。文档没有说明APU的这种内存具体的行为，猜测APU的Host-Visible Device Memory和Device-Visible Host Memory应该是类似的？</p>
+<li><p>接上一条，NPU处理float的能力差，而Layernorm和Attention等算子不可避免要使用浮点运算</p>
 </li>
 </ol>
-<h2 id="默认的内存对象分配方式"><a href="#默认的内存对象分配方式" class="headerlink" title="默认的内存对象分配方式"></a>默认的内存对象分配方式</h2><p><img src="/2024/08/20/test/penCL-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1.png"></p>
-<p>通过clCreateBuffer&#x2F;clCreateImage创建内存对象的时候，根据传入的flag，可以指定内存对象的位置。</p>
-<h2 id="Mapping和Zero-copy"><a href="#Mapping和Zero-copy" class="headerlink" title="Mapping和Zero-copy"></a>Mapping和Zero-copy</h2><p> clEnqueueMapBuffer&#x2F;clEnqueueMapImage可以获取一个内存对象的指针，然后就可以像访问host memory一样访问device的内存。</p>
-<p>访问结束后，需要使用clEnqueueUnmapMemObject解除映射。</p>
-<p>在建立这种映射的时候，如果host直接访问host的内存对象，或者host直接访问了device的内存对象，则是zero-copy。</p>
-<p>zero-copy具体发生的场景见上表。</p>
-<p>主要是三个flag：CL_MEM_USE_PERSISTENT_MEM_AMD, CL_MEM_USE_HOST_PTR, and<br>CL_MEM_ALLOC_HOST_PTR</p>
-<p>CL_MEM_USE_PERSISTENT_MEM_AMD是内存对象物理上在device，供host访问。</p>
-<p>CL_MEM_USE_HOST_PTR 和 CL_MEM_ALLOC_HOST_PTR相反。</p>
-<p><strong>tips：每次zero-copy返回的指针可能不一样。</strong></p>
-<p>另外，将host端的memory zero-copy给device本质上是一个trade-off，需要保证省去的数据传输时间开销要比zero-copy带来的低速访问大。</p>
-<p>APU和CPU共享系统内存，因此不存在PCIe的传输等开销。</p>
-<p>如果想要CPU访问APU的内存，</p>
-<p>See Section 1.3.4, “Mapping,”<br>page 1-10, for more information on zero cop</p>
+<p>三个应对技术（贡献）：</p>
+<ol>
+<li><p>Chunk-sharing graphs：对应第一个问题，也即做动态shape。思路是预编译几个固定形状的subgraph。</p>
+</li>
+<li><p>shadow outlier execution：对应第二个问题。NPU直接采用朴素的量化方法，同时，根据稀疏性的思想，把出现激活值的子tensor打包出来分给CPU和GPU计算。</p>
+</li>
+<li><p>Out-of-order subgraph execution：chunk可以进行乱序执行。设计一个动态调度器，减少推理过程中关键路径的执行时间（也即减少NPU的负载）。</p>
+</li>
+</ol>
+<h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><ol>
+<li><p>NPU具有优秀的INT8运算能力，（非常）缺乏浮点运算能力</p>
+</li>
+<li><p>手机平台CPU，GPU，NPU都在一个SoC上，共享相同的物理内存</p>
+</li>
+<li><p>静态shape下，NPU推理DNN的流程图，每次都要重新build和optimize开销最大<br><img src="/2024/08/20/test/ering-1000-tokens-second-on-device-LLM-prefilling-with-mllm-NPU/2024-08-28-19-08-52-image.png"></p>
+</li>
+<li><p>强调Gaps between LLMs and Mobile NPUs：<strong>缺少动态shape</strong>（截至2024.8，Intel的OpenVINO还没有NPU的dynamic shape算子支持，MindSpore框架对ascend的npu提供了<strong>实验性API</strong>支持）本文的前提是目前NPU的算子都必须现场编译一次；<strong>离群值的问题</strong>，NPU不能对整个tensor分组量化，如果拆分成多个tensor量化又导致了性能损失（不能充分利用NPU性能）；LLM中存在NPU无法高效完成的浮点运算算子。</p>
+</li>
+</ol>
+<h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p><img src="/2024/08/20/test/ering-1000-tokens-second-on-device-LLM-prefilling-with-mllm-NPU/2024-08-28-23-30-34-image.png"></p>
+<p>主要是三个部分，一个是把prompt分成chunk，另一个是对NPU执行scalar统一的量化做矩阵乘，结果和由CPU&#x2F;GPU计算的离群值加在一起以避免模型性能下降，最后一个就是动态调度机制，让CPU&#x2F;GPU和NPU的计算尽可能重叠。</p>
+<p><img src="/2024/08/20/test/ering-1000-tokens-second-on-device-LLM-prefilling-with-mllm-NPU/2024-08-29-21-08-08-image.png"></p>
+<p>图例中chunksize&#x3D;32，也即32个token为一组执行。a是朴素执行，如果这样的话，prompt的形状只要发生变化，就需要重新编译所有算子的kernel，带来大量的开销。</p>
+<p>chunk-share指的是对于一些算子，所有chunk的输入形状都相同，可以共享kernel（例如求QKVO，MLP中的所有算子），无需为每一个chunk都编译一个算子在内存中驻留。</p>
+<p>而诸如attention等算子，后续的chunk对前面的chunk存在依赖（例如32-63号token的chunk需要计算0-31号token的注意力得分，因此输入形状是64，64-95号的输入形状是96，以此类推）因此chunk之间无法共享kernel。</p>
+<p><img src="/2024/08/20/test/ering-1000-tokens-second-on-device-LLM-prefilling-with-mllm-NPU/2024-08-29-21-16-48-image.png"></p>
+<p>使用CPU&#x2F;GPU计算离群的激活值。量化的离群值问题已经老生常谈，主要就是要避免截断激活值中特别大的值，以免造成性能损失。使用CPU&#x2F;GPU在NPU计算的同时计算不经过截断的离群值， 则可以几乎无损的快速运算。一个问题是NPU的内存空间是独立的，CPU无法直接访问。拷贝两份权重的开销是不可接受的，因此需要在计算时extract一部分输入，计算这个impact tensor的结果，这样CPU端也不需要全部的权重了。</p>
+<p>LLM.INT8()等先前的工作已经观察到离群值是具有稀疏性的，而且在特定的层中，离群值总是出现在特定的一些channel中。因此这部分hot channel的权重驻留在CPU可以访问的内存中。如果推理中遇到了一些输入的离群值对应的权重不在内存的时候，则去disk里加载。</p>
+<p><img src="/2024/08/20/test/ering-1000-tokens-second-on-device-LLM-prefilling-with-mllm-NPU/2024-08-29-21-37-30-image.png"></p>
+<p>乱序执行。上如是naive的顺序执行，由于涉及到NPU和CPU&#x2F;GPU的并行计算，这两部分计算不可能是绝对对等的，经常会有一个设备处于空闲。一个设备上Ci-Graphj执行完之后可能会遇到另一个设备正在计算的是当前设备准备计算的下一个子图的依赖的情况。为了减少bubble，这种时候可以在候选队列里选一个可以执行的子图乱序执行。</p>
+<p>调度策略具体来说：If subgraph g is to be executed on the CPU&#x2F;GPU, let S be the set of new subgraphs that can be executed after g is completed. S will be executed on the NPU. A longer execution time of S is beneficial for reducing NPU stalls. Thus, g’s contribution is defined as the total execution time of  S. Conversely, if  g is executed on the NPU, a shorter execution time of S is beneficial, with the negative value ofS’s execution time as g’s contribution</p>
+<p>意思就是永远选择“执行完之后可以解锁总时长最多的NPU子图执行的CPU&#x2F;GPU子图”</p>
+<p>和“执行完之后可以解锁总时长最少的GPU&#x2F;NPU子图执行的NPU子图”。这样做的原因是NPU总是比CPU&#x2F;GPU的负载要重，所以应该总是让NPU忙碌，能调度上来的都调度上来，避免因为调度导致NPU的子图被依赖关系卡住无法执行。（示例图中的CPU执行时间似乎更长，和文字描述略有不同）</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>文章主要解决的是NPU缺乏动态shape、分组量化、还有CPU&#x2F;NPU共享内存的问题。NPU底层原理上前两点应该不难解决，共享内存可能涉及到CPU的缓存一致性问题，要复杂一些（大概？</p>
+<p>目前似乎也不是所有NPU都不支持动态shape，如果过段时间NPU基础设施建设的更好了，是否文章中的优化手段效果就没那么明显了？</p>
 
                 
             </div>
@@ -395,7 +407,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://rikoras.github.io/2024/08/23/AMD-OpenCL-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">https://rikoras.github.io/2024/08/23/AMD-OpenCL-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</a>
+                    <a href="https://rikoras.github.io/2024/08/28/Empowering-1000-tokens-second-on-device-LLM-prefilling-with-mllm-NPU/">https://rikoras.github.io/2024/08/28/Empowering-1000-tokens-second-on-device-LLM-prefilling-with-mllm-NPU/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -498,9 +510,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2024/08/28/Empowering-1000-tokens-second-on-device-LLM-prefilling-with-mllm-NPU/">
                     <div class="card-image">
@@ -518,9 +531,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -529,6 +542,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -539,13 +553,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/08/20/TCAD-23-Integrated-ARM-big-Little-Mali-Pipeline-for-High-Throughput-CNN-Inference/">
+                <a href="/2024/08/23/AMD-OpenCL-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.png" class="responsive-img" alt="TCAD&#39;23 Integrated ARM big.Little-Mali Pipeline for High-Throughput CNN Inference">
+                        <img src="/medias/featureimages/1.png" class="responsive-img" alt="AMD OpenCL 基础知识">
                         
-                        <span class="card-title">TCAD&#39;23 Integrated ARM big.Little-Mali Pipeline for High-Throughput CNN Inference</span>
+                        <span class="card-title">AMD OpenCL 基础知识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -556,7 +570,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-23
                             </span>
                         <span class="publish-author">
                             
@@ -565,22 +579,6 @@
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/chip/">
-                        <span class="chip bg-color">chip</span>
-                    </a>
-                    
-                    <a href="/tags/inference/">
-                        <span class="chip bg-color">inference</span>
-                    </a>
-                    
-                    <a href="/tags/heterogeneous/">
-                        <span class="chip bg-color">heterogeneous</span>
-                    </a>
-                    
                 </div>
                 
             </div>
